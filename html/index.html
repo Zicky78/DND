@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Character Sheet</title>
+		<link rel="stylesheet" href="../css/styles.css" />
+		<script defer src="../js/main.js"></script>
+	</head>
+	<body>
+		<!-- Character Main Panel -->
+		<div id="char_main_panel_container" class="w-100 bottom-border">
+			<!-- Character Img -->
+			<div id="char_img_container" class="w-100 center">
+				<img
+					id="character_img"
+					src="../assets/character_img.png"
+					alt="Character Image"
+				/>
+			</div>
+
+			<!-- Character Name -->
+			<p id="char_name" class="fs-large">Character Name</p>
+
+			<!-- Character Class / Level -->
+			<div id="class_level_container" class="inline">
+				<p id="char_class">Ranger</p>
+				<p id="char_level">3</p>
+			</div>
+
+			<!-- Proficiency Bonus -->
+			<p id="pbonus">Proficiency Bonus: <span class="highlight">+2</span></p>
+
+			<!-- Initiative -->
+			<p id="initiative">Initiative: <span class="highlight">+2</span></p>
+
+			<!-- Inspiration Tracker -->
+			<form id="inspiration">
+				<label>
+					Inspiration
+					<input type="checkbox" />
+				</label>
+			</form>
+		</div>
+
+		<!-- Hit Points Panel -->
+		<div id="hp_panel_container" class="bottom-border">
+			<!-- Current Health / Max Health -->
+			<p class="fs-large">Hit Points:</p>
+			<div id="hpcm_container" class="inline border-all fit-content">
+				<p id="hp_current"><span class="highlight">0</span></p>
+				<p id="hp_slash">/</p>
+				<p id="hp_max"><span class="highlight">0</span></p>
+			</div>
+
+			<!-- Temp HP -->
+			<div id="hp_temp_container" class="inline">
+				<p>Temp HP:</p>
+				<p id="hp_temp"><span class="highlight">0</span></p>
+			</div>
+
+			<!-- Short Rest / Long Rest -->
+			<div id="rest_container" class="inline">
+				<button id="short_rest">Short Rest</button>
+				<button id="long_rest">Long Rest</button>
+			</div>
+		</div>
+
+		<!-- Ability Score Panel -->
+		<p class="fs-large">Ability Scores:</p>
+		<div id="asi_panel_container" class="bottom-border">
+			<div id="asi_container" class="border-all inline">
+				<p id="asi_str">Str: <span class="highlight-red">8</span></p>
+				<p id="asi_str_bonus">Bonus: <span class="highlight-red">-1</span></p>
+				<p id="str_save">Save: <span class="highlight-red">-1</span></p>
+			</div>
+			<div id="asi_container" class="border-all inline">
+				<p id="asi_dex">Dex: <span class="highlight">14</span></p>
+				<p id="asi_dex_bonus">Bonus: <span class="highlight">+2</span></p>
+				<p id="dex_save">Save: <span class="highlight">+2</span></p>
+			</div>
+			<div id="asi_container" class="border-all inline">
+				<p id="asi_con">Con: <span class="highlight">16</span></p>
+				<p id="asi_con_bonus">Bonus: <span class="highlight">+3</span></p>
+				<p id="con_save">Save: <span class="highlight">+3</span></p>
+			</div>
+			<div id="asi_container" class="border-all inline">
+				<p id="asi_int">Int: <span class="highlight-red">8</span></p>
+				<p id="asi_int_bonus">Bonus: <span class="highlight-red">-1</span></p>
+				<p id="int_save">Save: <span class="highlight-red">-1</span></p>
+			</div>
+			<div id="asi_container" class="border-all inline">
+				<p id="asi_wis">Wis: <span class="highlight">16</span></p>
+				<p id="asi_wis_bonus">Bonus: <span class="highlight">+3</span></p>
+				<p id="wis_save">Save: <span class="highlight">+3</span></p>
+			</div>
+			<div id="asi_container" class="border-all inline">
+				<p id="asi_cha">Cha: <span class="highlight">12</span></p>
+				<p id="asi_cha_bonus">Bonus: <span class="highlight">+1</span></p>
+				<p id="cha_save">Save: <span class="highlight">+1</span></p>
+			</div>
+		</div>
+
+		<!-- Conditions Panel -->
+		<div id="conditions_panel_container" class="bottom-border">
+			<p class="fs-large border-all header fit-content tab">Conditions:</p>
+
+			<!-- AC / Speed -->
+			<div class="border-all">
+				<div class="inline">
+					<p id="ac">AC:</p>
+					<div
+						class="editable green-number"
+						contenteditable="true"
+						data-key="ac"
+						data-placeholder="0"
+					></div>
+				</div>
+
+				<div class="inline">
+					<p id="speed">Speed:</p>
+					<div
+						class="editable green-number"
+						contenteditable="true"
+						data-key="speed"
+						data-placeholder="30 ft"
+					></div>
+				</div>
+
+				<!-- Senses -->
+				<div class="inline">
+					<p id="passive_inv">Passive Investigation:</p>
+					<div
+						class="editable green-number"
+						contenteditable="true"
+						data-key="passive-inv"
+						data-placeholder="+0"
+					></div>
+				</div>
+				<div class="inline">
+					<p id="passive_ins">Passive Insight:</p>
+					<div
+						class="editable green-number"
+						contenteditable="true"
+						data-key="passive-ins"
+						data-placeholder="+0"
+					></div>
+				</div>
+				<div class="inline">
+					<p id="passive_perc">Passive Perception:</p>
+					<div
+						class="editable green-number"
+						contenteditable="true"
+						data-key="passive-perc"
+						data-placeholder="+0"
+					></div>
+				</div>
+			</div>
+
+			<!-- Defences / Conditions -->
+			<div class="border-all">
+				<p id="defences" class="fs-small">Defences:</p>
+				<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="defenses_desc"
+					data-placeholder="Add Defenses..."
+				></div>
+			</div>
+			<div class="border-all">
+				<p id="conditions" class="fs-small">Conditions:</p>
+				<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="conditions_desc"
+					data-placeholder="Add Conditions..."
+				></div>
+			</div>
+		</div>
+
+		<!-- Proficiency / Languages Panel -->
+		<div id="proficiencies_container" class="bottom-border">
+			<p class="fs-large header border-all fit-content tab">Proficiencies</p>
+			<!-- Weapons -->
+			<div class="border-all">
+				<p class="fs-small">Weapons:</p>
+				<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="prof_weapons"
+					data-placeholder="Add Weapons..."
+				></div>
+			</div>
+			<!-- Armor -->
+			<div class="border-all">
+				<p class="fs-small">Armor:</p>
+				<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="prof_armor"
+					data-placeholder="Add Armor..."
+				></div>
+			</div>
+			<!-- Tools -->
+			<div class="border-all">
+				<p class="fs-small">Tools:</p>
+				<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="prof_tools"
+					data-placeholder="Add Tools..."
+				></div>
+			</div>
+			<!-- Languages -->
+			<div class="border-all">
+				<p class="fs-small">Languages:</p>
+				<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="prof_languages"
+					data-placeholder="Add Languages..."
+				></div>
+			</div>
+		</div>
+
+		<!-- Combat Panel -->
+		<div id="combat-container" class="bottom-border">
+			<p class="fs-large border-all tab fit-content">Combat</p>
+			<!-- Attacks -->
+			<div id="attacks_container" class="">
+				<p class="header">Attacks:</p>
+				<!-- Attack -->
+				<div class="border-all">
+					<!-- Attack Name -->
+					<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="atk_name_1"
+						data-placeholder="Attack Name:"
+					></div>
+					<div class="inline-wide">
+						<!-- Attack Range -->
+						<p id="atk_range" class="fs-small">Range:</p>
+						<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="atk_range_1"
+							data-placeholder="Range"
+						></div>
+						<!-- Hit / DC -->
+						<p id="atk_hitdc" class="fs-small">Hit / DC: +</p>
+						<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="atk_hitdc_1"
+							data-placeholder="Hit / DC"
+						></div>
+						<!-- Damage -->
+						<p id="atk_dmg" class="fs-small">Damage:</p>
+						<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="atk_dmg_1"
+							data-placeholder="DMG"
+						></div>
+					</div>
+				</div>
+			</div>
+
+			<hr />
+
+			<!-- Masteries -->
+			<div id="masteries_container" class="">
+				<p class="header">Weapon Masteries:</p>
+				<!-- Mastery -->
+				<div class="border-all">
+					<!-- Mastery Name -->
+					<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="mastery_name_1"
+						data-placeholder="Mastery Name:"
+					></div>
+					<!-- Mastery Description -->
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="mastery_desc_1"
+						data-placeholder="Mastery Description…"
+					></div>
+				</div>
+				<!-- Mastery -->
+				<div class="border-all">
+					<!-- Mastery Name -->
+					<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="mastery_name_2"
+						data-placeholder="Mastery Name:"
+					></div>
+					<!-- Mastery Description -->
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="mastery_desc_2"
+						data-placeholder="Mastery Description…"
+					></div>
+				</div>
+			</div>
+
+			<hr />
+
+			<!-- Effects -->
+			<p id="effect_name">Effect Name</p>
+			<p id="effect_mod">Mod</p>
+			<p id="effect_affects">Affects</p>
+
+			<hr />
+
+			<!-- Actions -->
+			<p id="action_name">Action Name</p>
+			<p id="action_desc">Action Desc</p>
+
+			<hr />
+
+			<!-- Bonus Actions -->
+			<p id="bonus_name">Bonus Action Name</p>
+			<p id="bonus_desc">Bonus Action Desc</p>
+
+			<hr />
+
+			<!-- Reactions -->
+			<p id="reaction_name">Reaction Name</p>
+			<p id="reaction_desc">Reaction Desc</p>
+
+			<hr />
+
+			<!-- Free Actions -->
+			<p id="free_name">Free Action Name</p>
+			<p id="free_desc">Free Action Desc</p>
+		</div>
+
+		<!-- Skills / Tools Panel -->
+		<!-- Skills -->
+		<form id="skill_acr">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Acrobatics</p>
+				<p id="skill_mod">Dex</p>
+				<p id="skill_bonus">+2</p>
+			</label>
+		</form>
+		<form id="skill_ah">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Animal Handling</p>
+				<p id="skill_mod">Wis</p>
+				<p id="skill_bonus">+3</p>
+			</label>
+		</form>
+		<form id="skill_arc">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Arcana</p>
+				<p id="skill_mod">Int</p>
+				<p id="skill_bonus">-1</p>
+			</label>
+		</form>
+		<form id="skill_ath">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Athletics</p>
+				<p id="skill_mod">Str</p>
+				<p id="skill_bonus">-1</p>
+			</label>
+		</form>
+		<form id="skill_dec">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Deception</p>
+				<p id="skill_mod">Cha</p>
+				<p id="skill_bonus">+4</p>
+			</label>
+		</form>
+		<form id="skill_his">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">History</p>
+				<p id="skill_mod">Int</p>
+				<p id="skill_bonus">-1</p>
+			</label>
+		</form>
+		<form id="skill_ins">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Insight</p>
+				<p id="skill_mod">Wis</p>
+				<p id="skill_bonus">+3</p>
+			</label>
+		</form>
+		<form id="skill_int">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Intimidation</p>
+				<p id="skill_mod">Cha</p>
+				<p id="skill_bonus">+4</p>
+			</label>
+		</form>
+		<form id="skill_inv">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Investigation</p>
+				<p id="skill_mod">Int</p>
+				<p id="skill_bonus">-1</p>
+			</label>
+		</form>
+		<form id="skill_med">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Medicine</p>
+				<p id="skill_mod">Wis</p>
+				<p id="skill_bonus">+3</p>
+			</label>
+		</form>
+		<form id="skill_nat">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Nature</p>
+				<p id="skill_mod">Int</p>
+				<p id="skill_bonus">-1</p>
+			</label>
+		</form>
+		<form id="skill_perc">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Perception</p>
+				<p id="skill_mod">Wis</p>
+				<p id="skill_bonus">+3</p>
+			</label>
+		</form>
+		<form id="skill_perf">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Performance</p>
+				<p id="skill_mod">Cha</p>
+				<p id="skill_bonus">+4</p>
+			</label>
+		</form>
+		<form id="skill_pers">
+			<label>
+				<input type="radio" class="expertise" />
+				<p id="skill_name">Persuasion</p>
+				<p id="skill_mod">Cha</p>
+				<p id="skill_bonus">+4</p>
+			</label>
+		</form>
+		<form id="skill_rel">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Religion</p>
+				<p id="skill_mod">Int</p>
+				<p id="skill_bonus">-1</p>
+			</label>
+		</form>
+		<form id="skill_sle">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Sleight of Hand</p>
+				<p id="skill_mod">Dex</p>
+				<p id="skill_bonus">+2</p>
+			</label>
+		</form>
+		<form id="skill_ste">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Stealth</p>
+				<p id="skill_mod">Dex</p>
+				<p id="skill_bonus">+2</p>
+			</label>
+		</form>
+		<form id="skill_sur">
+			<label>
+				<input type="radio" />
+				<p id="skill_name">Survival</p>
+				<p id="skill_mod">Wis</p>
+				<p id="skill_bonus">+3</p>
+			</label>
+		</form>
+
+		<!-- Proficiencies -->
+		<p id="prof_name">Proficiency Name</p>
+		<p id="prof_desc">Proficiency Desc</p>
+
+		<!-- Spells Panel -->
+		<p id="spell_name">Spell Name</p>
+		<p id="spell_desc">Spell Desc</p>
+
+		<!-- Inventory Panel -->
+		<!-- Money -->
+		<p id="plat">Platinum: 0</p>
+		<p id="gold">Gold: 0</p>
+		<p id="electrum">Electrum: 0</p>
+		<p id="silver">Silver: 0</p>
+		<p id="copper">Copper: 0</p>
+
+		<!-- Equipment -->
+		<p id="equipment_name">Equipment Name</p>
+		<p id="equipment_quanity">Equipment Quantity</p>
+		<p id="eqipment_desc">Equipment Desc</p>
+
+		<!-- Attunement -->
+		<p id="attune_name">Attunement Name</p>
+		<p id="attune_desc">Attunement Desc</p>
+
+		<!-- Other Possesions -->
+		<p id="possesion_name">Profession Name</p>
+		<p id="possesion_desc">Profession Desc</p>
+
+		<!-- Features / Traits Panel -->
+		<!-- Class Features -->
+		<p id="class_feat_name">Class Feat. Name</p>
+		<p id="class_feat_desc">Class Feat Desc</p>
+
+		<!-- Species Traits -->
+		<p id="species_trait_name">Species Trait Name</p>
+		<p id="species_trait_desc">Species Trait Desc</p>
+
+		<!-- Feats -->
+		<p id="feat_name">Feat Name</p>
+		<p id="feat_desc">Feat Desc</p>
+
+		<!-- Other Features -->
+		<p id="other_feature_name">Other Feat. Name</p>
+		<p id="other_feature_desc">Other Feat Desc</p>
+
+		<!-- Notes Panel -->
+		<p id="organizations">Organizations</p>
+		<p id="allies">Allies</p>
+		<p id="enemies">Enemies</p>
+
+		<!-- About Panel -->
+		<!-- Background -->
+		<p id="background_name">Background Name</p>
+		<p id="background_desc">Background Desc</p>
+
+		<!-- Characteristics -->
+		<p id="alignment">Allignment</p>
+		<p id="gender">Gender</p>
+		<p id="eye_color">Eye Color</p>
+		<p id="size">Size</p>
+		<p id="height">Height</p>
+		<p id="faith">Faith</p>
+		<p id="hair_color">Hair Color</p>
+		<p id="skin_color">Skin Color</p>
+		<p id="age">Age</p>
+		<p id="weight">Weight</p>
+
+		<!-- Appearance -->
+		<p id="apprearance_desc">Appearance Desc</p>
+	</body>
+</html>

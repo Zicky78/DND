@@ -1,0 +1,154 @@
+/* Remove default margins, paddings, borders */
+/* Global Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(44, 44, 44);
+	color: white;
+	font-size: 1.5rem;
+	padding: 10px;
+}
+
+/* Character Image */
+#character_img {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.inline {
+	display: flex;
+	gap: 5px;
+}
+
+.inline-wide {
+	display: flex;
+	gap: 10px;
+}
+
+/* Form */
+label {
+	display: flex;
+	gap: 5px;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+.fs-large {
+	font-size: 2.3rem;
+}
+
+.fs-small {
+	font-size: 1.05rem;
+}
+
+.bottom-border {
+	border-bottom: #fff solid;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+.highlight {
+	background-color: #439b65;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+.highlight-red {
+	background-color: #c44a4a;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+.border-all {
+	border: #fff solid;
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.header {
+	margin-bottom: 15px;
+}
+
+#hpcm_container,
+.tab {
+}
+
+.fit-content {
+	width: fit-content;
+}
+
+.tab {
+	margin-bottom: 15px;
+}
+
+button {
+	background-color: rgb(106, 166, 255);
+	color: #fff;
+	font-size: 1.5rem;
+	border-radius: 7px;
+	padding: 3px;
+}
+
+input {
+	width: 1.6rem;
+	border-radius: 5px;
+}
+
+input[type='radio']:checked.expertise {
+	accent-color: #ae55c9;
+}
+
+input[type='radio']:checked {
+	accent-color: #439b65;
+}
+
+.green-number[contenteditable][data-placeholder]:empty::before {
+	content: attr(data-placeholder);
+	color: #ffffff;
+	pointer-events: none; /* so clicks still go into the box */
+	background-color: #439b65;
+	border-radius: 4px;
+}
+
+.green-number {
+	content: attr(data-placeholder);
+	color: #ffffff;
+	pointer-events: none; /* so clicks still go into the box */
+	background-color: #439b65;
+	padding: 0px 5px;
+	border-radius: 4px;
+}
+
+.edit-desc[contenteditable][data-placeholder]:empty::before {
+	content: attr(data-placeholder);
+	color: #7e7e7e; /* default gray */
+	pointer-events: none; /* so clicks still go into the box */
+}
+
+.edit-label[contenteditable][data-placeholder]:empty::before {
+	content: attr(data-placeholder);
+	color: #fff;
+	pointer-events: none; /* so clicks still go into the box */
+}
+
+.edit-desc {
+	color: #b1b1b1;
+}
+
+hr {
+	width: 50%;
+	justify-self: center;
+	margin: 15px 0px;
+}
