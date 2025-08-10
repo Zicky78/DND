@@ -103,7 +103,7 @@ button {
 	color: #fff;
 	font-size: 1.5rem;
 	border-radius: 7px;
-	padding: 3px;
+	padding: 3px 5px;
 }
 
 input {
@@ -187,7 +187,8 @@ hr {
 	margin-top: 15px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	gap: 20px;
+	/* justify-content: space-evenly; */
 }
 
 #inspiration {
