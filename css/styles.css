@@ -81,10 +81,12 @@ label {
 	margin-bottom: 15px;
 }
 
-#hpcm_container,
-.tab {
+#hpcm_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
 }
-
 .fit-content {
 	width: fit-content;
 }
@@ -92,6 +94,8 @@ label {
 .tab {
 	margin-bottom: 15px;
 }
+
+
 
 button {
 	background-color: rgb(106, 166, 255);
@@ -131,6 +135,31 @@ input[type='radio']:checked {
 	border-radius: 4px;
 }
 
+.green-number-lg[contenteditable][data-placeholder]:empty::before,
+.green-number-lg { 
+	padding: 0px 10px !important;
+	height:fit-content;
+	
+}
+
+
+.red-number[contenteditable][data-placeholder]:empty::before {
+	content: attr(data-placeholder);
+	color: #ffffff;
+	pointer-events: none; /* so clicks still go into the box */
+	background-color: #c44a4a;
+	border-radius: 4px;
+}
+
+.red-number {
+	content: attr(data-placeholder);
+	color: #ffffff;
+	pointer-events: none; /* so clicks still go into the box */
+	background-color: #c44a4a;
+	padding: 0px 5px;
+	border-radius: 4px;
+}
+
 .edit-desc[contenteditable][data-placeholder]:empty::before {
 	content: attr(data-placeholder);
 	color: #7e7e7e; /* default gray */
@@ -151,4 +180,23 @@ hr {
 	width: 50%;
 	justify-self: center;
 	margin: 15px 0px;
+}
+
+#rest_container {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+#inspiration {
+	margin-top: 15px;
+}
+
+#pbonus_container {
+	margin-top: 20px;
+}
+
+#char_name_container {
+	margin-bottom: 15px;
 }

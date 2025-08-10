@@ -20,24 +20,41 @@
 			</div>
 
 			<!-- Character Name -->
-			<p id="char_name" class="fs-large">Character Name</p>
+			<div id="char_name_container">
+				<p id="char_name" class="fs-large">Character Name</p>
+			</div>
 
 			<!-- Character Class / Level -->
 			<div id="class_level_container" class="inline">
-				<p id="char_class">Ranger</p>
+				<p id="char_class">Fey Wanderer Ranger,</p>
 				<p id="char_level">3</p>
 			</div>
 
 			<!-- Proficiency Bonus -->
-			<p id="pbonus">Proficiency Bonus: <span class="highlight">+2</span></p>
+			<div id="pbonus_container" class="inline">
 
+				<p id="pbonus">Proficiency Bonus: <div
+					class="editable green-number fit-content"
+					contenteditable="true"
+					data-key="pbonus"
+					data-placeholder="+2"
+				></div></p>
+			</div>
+				
 			<!-- Initiative -->
-			<p id="initiative">Initiative: <span class="highlight">+2</span></p>
+			<div id="intiative_container" class="inline">
+			<p id="initiative">Initiative: <div
+					class="editable green-number fit-content"
+					contenteditable="true"
+					data-key="initiative"
+					data-placeholder="+2"
+				></div></p>
+				</div>
 
 			<!-- Inspiration Tracker -->
 			<form id="inspiration">
 				<label>
-					Inspiration
+					Inspiration:
 					<input type="checkbox" />
 				</label>
 			</form>
@@ -46,58 +63,163 @@
 		<!-- Hit Points Panel -->
 		<div id="hp_panel_container" class="bottom-border">
 			<!-- Current Health / Max Health -->
-			<p class="fs-large">Hit Points:</p>
-			<div id="hpcm_container" class="inline border-all fit-content">
-				<p id="hp_current"><span class="highlight">0</span></p>
-				<p id="hp_slash">/</p>
-				<p id="hp_max"><span class="highlight">0</span></p>
+			<div id="hpcm_container" class="inline fit-content border-all header">
+				<p class="fs-large  fit-content ">Hit Points:</p>
+				<div
+					class="editable green-number green-number-lg fs-large"
+					contenteditable="true"
+					data-key="hp_current"
+					data-placeholder="0"
+				></div></p>
+				<p id="hp_slash" class="fs-large">/</p>
+				<div
+					class="editable green-number green-number-lg fs-large"
+					contenteditable="true"
+					data-key="hp_max"
+					data-placeholder="0"
+				></div>
 			</div>
 
 			<!-- Temp HP -->
 			<div id="hp_temp_container" class="inline">
 				<p>Temp HP:</p>
-				<p id="hp_temp"><span class="highlight">0</span></p>
+				<div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="temp_hp"
+					data-placeholder="0"
+				></div>
 			</div>
 
 			<!-- Short Rest / Long Rest -->
-			<div id="rest_container" class="inline">
+			<div id="rest_container" class="w-100">
 				<button id="short_rest">Short Rest</button>
 				<button id="long_rest">Long Rest</button>
 			</div>
 		</div>
 
 		<!-- Ability Score Panel -->
-		<p class="fs-large">Ability Scores:</p>
+		<p class="fs-large header border-all fit-content tab">Ability Scores:</p>
 		<div id="asi_panel_container" class="bottom-border">
 			<div id="asi_container" class="border-all inline">
-				<p id="asi_str">Str: <span class="highlight-red">8</span></p>
-				<p id="asi_str_bonus">Bonus: <span class="highlight-red">-1</span></p>
-				<p id="str_save">Save: <span class="highlight-red">-1</span></p>
+				<p id="asi_str">Str: <div
+						class="editable red-number"
+						contenteditable="true"
+						data-key="asi_str"
+						data-placeholder="8"
+					></div></p>
+				<p id="asi_str_bonus">Bonus: <div
+						class="editable red-number"
+						contenteditable="true"
+						data-key="asi_str_bonus"
+						data-placeholder="-1"
+					></div></p>
+				<p id="str_save">Save: <div
+						class="editable red-number"
+						contenteditable="true"
+						data-key="str_save"
+						data-placeholder="-1"
+					></div></p>
 			</div>
 			<div id="asi_container" class="border-all inline">
-				<p id="asi_dex">Dex: <span class="highlight">14</span></p>
-				<p id="asi_dex_bonus">Bonus: <span class="highlight">+2</span></p>
-				<p id="dex_save">Save: <span class="highlight">+2</span></p>
+				<p id="asi_dex">Dex: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_dex"
+					data-placeholder="14"
+				></div></p>
+				<p id="asi_dex_bonus">Bonus: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_dex_bonus"
+					data-placeholder="+2"
+				></div></p>
+				<p id="dex_save">Save: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="dex_save"
+					data-placeholder="+2"
+				></div></p>
 			</div>
 			<div id="asi_container" class="border-all inline">
-				<p id="asi_con">Con: <span class="highlight">16</span></p>
-				<p id="asi_con_bonus">Bonus: <span class="highlight">+3</span></p>
-				<p id="con_save">Save: <span class="highlight">+3</span></p>
+				<p id="asi_con">Con: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_con"
+					data-placeholder="16"
+				></div></p>
+				<p id="asi_con_bonus">Bonus: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_con_bonus"
+					data-placeholder="+3"
+				></div></p>
+				<p id="con_save">Save: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="con_save"
+					data-placeholder="+3"
+				></div></p>
 			</div>
 			<div id="asi_container" class="border-all inline">
-				<p id="asi_int">Int: <span class="highlight-red">8</span></p>
-				<p id="asi_int_bonus">Bonus: <span class="highlight-red">-1</span></p>
-				<p id="int_save">Save: <span class="highlight-red">-1</span></p>
+				<p id="asi_int">Int: <div
+						class="editable red-number"
+						contenteditable="true"
+						data-key="asi_int"
+						data-placeholder="8"
+					></div></p>
+				<p id="asi_int_bonus">Bonus: <div
+						class="editable red-number"
+						contenteditable="true"
+						data-key="asi_int_bonus"
+						data-placeholder="-1"
+					></div></p>
+				<p id="int_save">Save: <div
+						class="editable red-number"
+						contenteditable="true"
+						data-key="int_save"
+						data-placeholder="-1"
+					></div></p>
 			</div>
 			<div id="asi_container" class="border-all inline">
-				<p id="asi_wis">Wis: <span class="highlight">16</span></p>
-				<p id="asi_wis_bonus">Bonus: <span class="highlight">+3</span></p>
-				<p id="wis_save">Save: <span class="highlight">+3</span></p>
+				<p id="asi_wis">Wis: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_wis"
+					data-placeholder="16"
+				></div></p>
+				<p id="asi_wis_bonus">Bonus: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_wis_bonus"
+					data-placeholder="+3"
+				></div></p>
+				<p id="wis_save">Save: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="wis_save"
+					data-placeholder="+3"
+				></div></p>
 			</div>
 			<div id="asi_container" class="border-all inline">
-				<p id="asi_cha">Cha: <span class="highlight">12</span></p>
-				<p id="asi_cha_bonus">Bonus: <span class="highlight">+1</span></p>
-				<p id="cha_save">Save: <span class="highlight">+1</span></p>
+				<p id="asi_cha">Cha: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_cha"
+					data-placeholder="16"
+				></div></p>
+				<p id="asi_cha_bonus">Bonus: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="asi_cha_bonus"
+					data-placeholder="+1"
+				></div></p>
+				<p id="cha_save">Save: <div
+					class="editable green-number"
+					contenteditable="true"
+					data-key="cha_save"
+					data-placeholder="+1"
+				></div></p>
 			</div>
 		</div>
 
