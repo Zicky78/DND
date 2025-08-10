@@ -68,3 +68,32 @@ document.querySelectorAll('input[type="radio"]').forEach((radio) => {
 	// Boot up for the whole page
 	initEditables();
 })();
+
+function normalizeEmpty(el) {
+	// Remove whitespace and non-breaking spaces
+	const txt = el.textContent.replace(/\u00A0/g, ' ').trim();
+	if (txt === '') {
+		el.innerHTML = ''; // important: no <br>, no spaces
+	}
+}
+
+document.addEventListener('input', (e) => {
+	if (e.target.matches('.edit-desc[contenteditable]')) {
+		normalizeEmpty(e.target);
+	}
+});
+
+document.addEventListener(
+	'blur',
+	(e) => {
+		if (e.target.matches('.edit-desc[contenteditable]')) {
+			normalizeEmpty(e.target);
+		}
+	},
+	true
+);
+
+// On load, normalize all boxes (handles content loaded from storage, etc.)
+document
+	.querySelectorAll('.edit-desc[contenteditable]')
+	.forEach(normalizeEmpty);

@@ -11,6 +11,7 @@ body {
 	color: white;
 	font-size: 1.5rem;
 	padding: 10px;
+	padding-bottom: 30vh;
 }
 
 /* Character Image */
@@ -183,7 +184,7 @@ hr {
 }
 
 #rest_container {
-	margin-top: 30px;
+	margin-top: 15px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -199,4 +200,20 @@ hr {
 
 #char_name_container {
 	margin-bottom: 15px;
+}
+
+#effects_container {
+	justify-content: space-between;
+}
+
+#money_container_1, #money_container_2 {
+	justify-content: space-around;
+}
+
+#equipment_header_container {
+	justify-content: space-between
+}
+
+form {
+	padding-bottom: 5px;
 }
