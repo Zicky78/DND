@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: Calibri, sans-serif;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
 }
 
 /* Form */
-label {
+.d-flex, label {
 	display: flex;
 	gap: 5px;
 }
@@ -39,6 +40,11 @@ label {
 .w-100 {
 	width: 100%;
 }
+
+.spell-group { margin: 8px 0 14px; }
+.spell-group h4 { font-size: 1.1rem; margin-bottom: 6px; }
+.group-body > .spell { margin-bottom: 10px; }
+
 
 .center {
 	display: flex;
@@ -50,7 +56,7 @@ label {
 }
 
 .fs-small {
-	font-size: 1.05rem;
+	font-size: 1.05rem !important;
 }
 
 .bottom-border {
@@ -86,7 +92,6 @@ label {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
 }
 .fit-content {
 	width: fit-content;
@@ -96,14 +101,45 @@ label {
 	margin-bottom: 15px;
 }
 
-
-
-button {
+#short_rest, #long_rest {
 	background-color: rgb(106, 166, 255);
 	color: #fff;
 	font-size: 1.5rem;
 	border-radius: 7px;
 	padding: 3px 5px;
+}
+
+#char_name {
+	padding-bottom: 10px;
+}
+
+.add-button {
+	background: none;
+	border: solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 20px;
+	padding: 0px 5px;
+}
+
+#export-json, #import-json {
+	background: none;
+	border: solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	padding: 3px 5px;
+}
+
+
+button.collapser {
+	background: none;
+	border: none;
+	color: none;
+}
+
+.panel-button {
+	height: 55px;
+	color: #fff;
 }
 
 input {
@@ -137,12 +173,10 @@ input[type='radio']:checked {
 }
 
 .green-number-lg[contenteditable][data-placeholder]:empty::before,
-.green-number-lg { 
+.green-number-lg {
 	padding: 0px 10px !important;
-	height:fit-content;
-	
+	height: fit-content;
 }
-
 
 .red-number[contenteditable][data-placeholder]:empty::before {
 	content: attr(data-placeholder);
@@ -177,6 +211,10 @@ input[type='radio']:checked {
 	color: #b1b1b1;
 }
 
+.edit-desc * {
+	font-size: inherit !important;
+}
+
 hr {
 	width: 50%;
 	justify-self: center;
@@ -207,14 +245,79 @@ hr {
 	justify-content: space-between;
 }
 
-#money_container_1, #money_container_2 {
+#money_container_1,
+#money_container_2 {
 	justify-content: space-around;
 }
 
 #equipment_header_container {
-	justify-content: space-between
+	justify-content: space-between;
 }
 
 form {
 	padding-bottom: 5px;
 }
+
+#spell_header_container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#spell_level_container {
+	display: flex;
+	flex-direction: column;
+}
+
+/* #spell_header_container:has(+ #spell-sec-1 .prepared:checked) {
+	
+} */
+
+.spell > .border-all:has(+ .collapse .prepared:checked) {
+  	background: #439b65;
+	transition: background-color .2s ease;
+}
+
+.spell-border{
+	border: 0.5px solid #fff;
+}
+
+.justify-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+ .collapse {
+    display: grid;
+    grid-template-rows: 0fr;         /* closed */
+    transition: grid-template-rows .25s ease;
+    overflow: hidden;
+    margin: 8px 0 16px;
+  }
+  .collapse .content { overflow: hidden; }
+  .collapse[data-open="true"] {       /* open */
+    grid-template-rows: 1fr;
+  }
+
+  /* Optional button styling */
+  .collapser { cursor: pointer; }
+  /* .collapser[aria-expanded="true"] {  } */
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .collapse { transition: none; }
+  }
+
+
+  /*
+  
+<div class="justify-between">
+
+<button class="collapser" data-collapse-target="sec-10" aria-expanded="false" aria-controls="sec-10"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+</div>
+<div id="spell-sec-1" class="collapse" data-open="false" aria-hidden="true" inert>
+	<div class="content"> 
+ 
+  */

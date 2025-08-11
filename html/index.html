@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" spellcheck="false">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,45 +21,51 @@
 			</div>
 			<!-- Character Name -->
 			<div id="char_name_container" class="border-all fit-content">
-				<p id="char_name" class="fs-large">John Faerun</p>
+				<p id="char_name" class="fs-large">John Faerun, High Elf</p>
+				<div class="inline">
+					<button id="export-json" type="button">Export Sheet</button>
+					<button id="import-json" type="button">Import Sheet</button>
+				</div>
+				<input id="file-json" type="file" accept="application/json" hidden>
+
 			</div>
 			
 			<div class="border-all">
 			<!-- Character Class / Level -->
-			<div id="class_level_container" class="inline">
-				<p id="char_class">Fey Wanderer Ranger,</p>
-				<p id="char_level">3</p>
-			</div>
-
-			<!-- Proficiency Bonus -->
-			<div id="pbonus_container" class="inline">
-
-				<p id="pbonus">Proficiency Bonus: <div
-					class="editable green-number fit-content"
-					contenteditable="true"
-					data-key="pbonus"
-					data-placeholder="+2"
-				></div></p>
-			</div>
-				
-			<!-- Initiative -->
-			<div id="intiative_container" class="inline">
-			<p id="initiative">Initiative: <div
-					class="editable green-number fit-content"
-					contenteditable="true"
-					data-key="initiative"
-					data-placeholder="+2"
-				></div></p>
+				<div id="class_level_container" class="inline">
+					<p id="char_class">Fey Wanderer Ranger,</p>
+					<p id="char_level">3</p>
 				</div>
 
-			<!-- Inspiration Tracker -->
-			<form id="inspiration">
-				<label>
-					Inspiration:
-					<input type="checkbox" />
-				</label>
-			</form>
-		</div>
+				<!-- Proficiency Bonus -->
+				<div id="pbonus_container" class="inline">
+
+					<p id="pbonus">Proficiency Bonus: <div
+						class="editable green-number fit-content"
+						contenteditable="true"
+						data-key="pbonus"
+						data-placeholder="+2"
+					></div></p>
+				</div>
+					
+				<!-- Initiative -->
+				<div id="intiative_container" class="inline">
+				<p id="initiative">Initiative: <div
+						class="editable green-number fit-content"
+						contenteditable="true"
+						data-key="initiative"
+						data-placeholder="+2"
+					></div></p>
+				</div>
+
+				<!-- Inspiration Tracker -->
+				<form id="inspiration">
+					<label>
+						Inspiration:
+						<input type="checkbox" />
+					</label>
+				</form>
+			</div>
 		</div>
 
 		<!-- Hit Points Panel -->
@@ -93,145 +99,8 @@
 				></div>
 			</div>
 
-			<!-- Short Rest / Long Rest -->
-			<div id="rest_container" class="w-100">
-				<button id="short_rest">Short Rest</button>
-				<button id="long_rest">Long Rest</button>
-			</div>
-		</div>
-
-		<!-- Ability Score Panel -->
-		<p class="fs-large header border-all fit-content tab">Ability Scores:</p>
-		<div id="asi_panel_container" class="bottom-border">
-			<div id="asi_container" class="border-all inline">
-				<p id="asi_str">Str: <div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="asi_str"
-						data-placeholder="8"
-					></div></p>
-				<p id="asi_str_bonus">Bonus: <div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="asi_str_bonus"
-						data-placeholder="-1"
-					></div></p>
-				<p id="str_save">Save: <div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="str_save"
-						data-placeholder="-1"
-					></div></p>
-			</div>
-			<div id="asi_container" class="border-all inline">
-				<p id="asi_dex">Dex: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_dex"
-					data-placeholder="14"
-				></div></p>
-				<p id="asi_dex_bonus">Bonus: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_dex_bonus"
-					data-placeholder="+2"
-				></div></p>
-				<p id="dex_save">Save: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="dex_save"
-					data-placeholder="+2"
-				></div></p>
-			</div>
-			<div id="asi_container" class="border-all inline">
-				<p id="asi_con">Con: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_con"
-					data-placeholder="16"
-				></div></p>
-				<p id="asi_con_bonus">Bonus: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_con_bonus"
-					data-placeholder="+3"
-				></div></p>
-				<p id="con_save">Save: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="con_save"
-					data-placeholder="+3"
-				></div></p>
-			</div>
-			<div id="asi_container" class="border-all inline">
-				<p id="asi_int">Int: <div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="asi_int"
-						data-placeholder="8"
-					></div></p>
-				<p id="asi_int_bonus">Bonus: <div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="asi_int_bonus"
-						data-placeholder="-1"
-					></div></p>
-				<p id="int_save">Save: <div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="int_save"
-						data-placeholder="-1"
-					></div></p>
-			</div>
-			<div id="asi_container" class="border-all inline">
-				<p id="asi_wis">Wis: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_wis"
-					data-placeholder="16"
-				></div></p>
-				<p id="asi_wis_bonus">Bonus: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_wis_bonus"
-					data-placeholder="+3"
-				></div></p>
-				<p id="wis_save">Save: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="wis_save"
-					data-placeholder="+3"
-				></div></p>
-			</div>
-			<div id="asi_container" class="border-all inline">
-				<p id="asi_cha">Cha: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_cha"
-					data-placeholder="16"
-				></div></p>
-				<p id="asi_cha_bonus">Bonus: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="asi_cha_bonus"
-					data-placeholder="+1"
-				></div></p>
-				<p id="cha_save">Save: <div
-					class="editable green-number"
-					contenteditable="true"
-					data-key="cha_save"
-					data-placeholder="+1"
-				></div></p>
-			</div>
-		</div>
-
-		<!-- Conditions Panel -->
-		<div id="conditions_panel_container" class="bottom-border">
-			<p class="fs-large border-all header fit-content tab">Conditions:</p>
-
-			<!-- AC / Speed -->
-			<div class="border-all">
-				<div class="inline">
+			<!-- Ac / Speed -->
+			<div class="inline">
 					<p id="ac">AC:</p>
 					<div
 						class="editable green-number"
@@ -250,6 +119,161 @@
 						data-placeholder="30 ft"
 					></div>
 				</div>
+
+			<!-- Short Rest / Long Rest -->
+			<div id="rest_container" class="w-100">
+				<button id="short_rest">Short Rest</button>
+				<button id="long_rest">Long Rest</button>
+			</div>
+		</div>
+
+		<!-- Ability Score Panel -->
+		<div class="justify-between">
+			<p class="fs-large header border-all fit-content tab">Ability Scores:</p>
+			<button class="collapser" data-collapse-target="sec-1"
+			aria-expanded="false" aria-controls="sec-1"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+		</div>
+		<div id="sec-1" class="collapse" data-open="false" aria-hidden="true" inert>
+			<div class="content">
+				<div id="asi_panel_container" class="bottom-border">
+					<div id="asi_container" class="border-all inline">
+						<p id="asi_str">Str: <div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="asi_str"
+								data-placeholder="8"
+							></div></p>
+						<p id="asi_str_bonus">Bonus: <div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="asi_str_bonus"
+								data-placeholder="-1"
+							></div></p>
+						<p id="str_save">Save: <div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="str_save"
+								data-placeholder="+1"
+							></div></p>
+					</div>
+					<div id="asi_container" class="border-all inline">
+						<p id="asi_dex">Dex: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_dex"
+							data-placeholder="14"
+						></div></p>
+						<p id="asi_dex_bonus">Bonus: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_dex_bonus"
+							data-placeholder="+2"
+						></div></p>
+						<p id="dex_save">Save: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="dex_save"
+							data-placeholder="+4"
+						></div></p>
+					</div>
+					<div id="asi_container" class="border-all inline">
+						<p id="asi_con">Con: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_con"
+							data-placeholder="16"
+						></div></p>
+						<p id="asi_con_bonus">Bonus: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_con_bonus"
+							data-placeholder="+3"
+						></div></p>
+						<p id="con_save">Save: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="con_save"
+							data-placeholder="+3"
+						></div></p>
+					</div>
+					<div id="asi_container" class="border-all inline">
+						<p id="asi_int">Int: <div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="asi_int"
+								data-placeholder="8"
+							></div></p>
+						<p id="asi_int_bonus">Bonus: <div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="asi_int_bonus"
+								data-placeholder="-1"
+							></div></p>
+						<p id="int_save">Save: <div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="int_save"
+								data-placeholder="-1"
+							></div></p>
+					</div>
+					<div id="asi_container" class="border-all inline">
+						<p id="asi_wis">Wis: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_wis"
+							data-placeholder="16"
+						></div></p>
+						<p id="asi_wis_bonus">Bonus: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_wis_bonus"
+							data-placeholder="+3"
+						></div></p>
+						<p id="wis_save">Save: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="wis_save"
+							data-placeholder="+3"
+						></div></p>
+					</div>
+					<div id="asi_container" class="border-all inline">
+						<p id="asi_cha">Cha: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_cha"
+							data-placeholder="16"
+						></div></p>
+						<p id="asi_cha_bonus">Bonus: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="asi_cha_bonus"
+							data-placeholder="+1"
+						></div></p>
+						<p id="cha_save">Save: <div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="cha_save"
+							data-placeholder="+1"
+						></div></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Conditions Panel -->
+		<div class="justify-between">
+			<p class="fs-large border-all header fit-content tab">Conditions:</p>
+			<button class="collapser" data-collapse-target="sec-2"
+			aria-expanded="false" aria-controls="sec-2"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+  		</div>
+  		<div id="sec-2" class="collapse" data-open="false" aria-hidden="true" inert>
+			<div class="content">
+
+		<div id="conditions_panel_container" class="bottom-border">
+
+			<!-- AC / Speed -->
+			<div class="border-all">
+				
 
 				<!-- Senses -->
 				<div class="inline">
@@ -301,10 +325,18 @@
 				></div>
 			</div>
 		</div>
+			</div>
+  		</div>
 
 		<!-- Proficiency / Languages Panel -->
-		<div id="proficiencies_container" class="bottom-border">
+		<div class="justify-between">
 			<p class="fs-large header border-all fit-content tab">Proficiencies</p>
+			<button class="collapser" data-collapse-target="sec-3"
+			aria-expanded="false" aria-controls="sec-3"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+  		</div>
+  		<div id="sec-3" class="collapse" data-open="false" aria-hidden="true" inert>
+			<div class="content">
+		<div id="proficiencies_container" class="bottom-border">
 			<!-- Weapons -->
 			<div class="border-all">
 				<p class="fs-small">Weapons:</p>
@@ -346,831 +378,1420 @@
 				></div>
 			</div>
 		</div>
+			</div>
+  		</div>
 
 		<!-- Combat Panel -->
-		<div id="combat-container" class="bottom-border">
+		<div class="justify-between">
 			<p class="fs-large border-all tab fit-content">Combat</p>
-			<!-- Attacks -->
-			<div id="attacks_container" class="">
-				<p class="header">Attacks:</p>
-				<!-- Attack -->
-				<div class="border-all">
-					<!-- Attack Name -->
-					<div
-						class="editable fs-small edit-label"
-						contenteditable="true"
-						data-key="atk_name_1"
-						data-placeholder="Attack Name:"
-					></div>
-					<div class="inline-wide">
-						<!-- Attack Range -->
-						<p id="atk_range" class="fs-small">Range:</p>
+			<button class="collapser" data-collapse-target="sec-4"
+			aria-expanded="false" aria-controls="sec-4"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+  		</div>
+  		<div id="sec-4" class="collapse" data-open="false" aria-hidden="true" inert>
+		<div class="content">
+			<div id="combat-container" class="bottom-border">
+
+				<!-- Attacks -->
+				<div id="attacks_container" class="">
+					<p class="header">Attacks:</p>
+					<!-- Attack 1-->
+					<div class="border-all">
+						<!-- Attack Name -->
 						<div
-							class="editable fs-small edit-desc"
+							class="editable fs-small edit-label"
 							contenteditable="true"
-							data-key="atk_range_1"
-							data-placeholder="Range"
+							data-key="atk_name_1"
+							data-placeholder="Attack Name:"
 						></div>
-						<!-- Hit / DC -->
-						<p id="atk_hitdc" class="fs-small">Hit / DC: +</p>
+						<div class="inline-wide">
+							<!-- Attack Range -->
+							<p id="atk_range" class="fs-small">Range:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_range_1"
+								data-placeholder="Range"
+							></div>
+							<!-- Hit / DC -->
+							<p id="atk_hitdc" class="fs-small">Hit / DC:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_hitdc_1"
+								data-placeholder="Hit / DC"
+							></div>
+							<!-- Damage -->
+							<p id="atk_dmg" class="fs-small">Damage:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_dmg_1"
+								data-placeholder="DMG"
+							></div>
+						</div>
+					</div>
+					<!-- Attack 2-->
+					<div class="border-all">
+						<!-- Attack Name -->
 						<div
-							class="editable fs-small edit-desc"
+							class="editable fs-small edit-label"
 							contenteditable="true"
-							data-key="atk_hitdc_1"
-							data-placeholder="Hit / DC"
+							data-key="atk_name_2"
+							data-placeholder="Attack Name:"
 						></div>
-						<!-- Damage -->
-						<p id="atk_dmg" class="fs-small">Damage:</p>
+						<div class="inline-wide">
+							<!-- Attack Range -->
+							<p id="atk_range" class="fs-small">Range:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_range_2"
+								data-placeholder="Range"
+							></div>
+							<!-- Hit / DC -->
+							<p id="atk_hitdc" class="fs-small">Hit / DC:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_hitdc_2"
+								data-placeholder="Hit / DC"
+							></div>
+							<!-- Damage -->
+							<p id="atk_dmg" class="fs-small">Damage:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_dmg_2"
+								data-placeholder="DMG"
+							></div>
+						</div>
+					</div>
+					<!-- Attack 3-->
+					<div class="border-all">
+						<!-- Attack Name -->
+						<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="atk_name_3"
+							data-placeholder="Attack Name:"
+						></div>
+						<div class="inline-wide">
+							<!-- Attack Range -->
+							<p id="atk_range" class="fs-small">Range:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_range_3"
+								data-placeholder="Range"
+							></div>
+							<!-- Hit / DC -->
+							<p id="atk_hitdc" class="fs-small">Hit / DC:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_hitdc_3"
+								data-placeholder="Hit / DC"
+							></div>
+							<!-- Damage -->
+							<p id="atk_dmg" class="fs-small">Damage:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_dmg_3"
+								data-placeholder="DMG"
+							></div>
+						</div>
+					</div>
+					<!-- Attack 4-->
+					<div class="border-all">
+						<!-- Attack Name -->
+						<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="atk_name_4"
+							data-placeholder="Attack Name:"
+						></div>
+						<div class="inline-wide">
+							<!-- Attack Range -->
+							<p id="atk_range" class="fs-small">Range:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_range_4"
+								data-placeholder="Range"
+							></div>
+							<!-- Hit / DC -->
+							<p id="atk_hitdc" class="fs-small">Hit / DC:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_hitdc_4"
+								data-placeholder="Hit / DC"
+							></div>
+							<!-- Damage -->
+							<p id="atk_dmg" class="fs-small">Damage:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_dmg_4"
+								data-placeholder="DMG"
+							></div>
+						</div>
+					</div>
+					<!-- Attack 5-->
+					<div class="border-all">
+						<!-- Attack Name -->
+						<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="atk_name_5"
+							data-placeholder="Attack Name:"
+						></div>
+						<div class="inline-wide">
+							<!-- Attack Range -->
+							<p id="atk_range" class="fs-small">Range:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_range_5"
+								data-placeholder="Range"
+							></div>
+							<!-- Hit / DC -->
+							<p id="atk_hitdc" class="fs-small">Hit / DC:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_hitdc_5"
+								data-placeholder="Hit / DC"
+							></div>
+							<!-- Damage -->
+							<p id="atk_dmg" class="fs-small">Damage:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_dmg_5"
+								data-placeholder="DMG"
+							></div>
+						</div>
+					</div>
+					<!-- Attack 6-->
+					<div class="border-all">
+						<!-- Attack Name -->
+						<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="atk_name_6"
+							data-placeholder="Attack Name:"
+						></div>
+						<div class="inline-wide">
+							<!-- Attack Range -->
+							<p id="atk_range" class="fs-small">Range:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_range_6"
+								data-placeholder="Range"
+							></div>
+							<!-- Hit / DC -->
+							<p id="atk_hitdc" class="fs-small">Hit / DC:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_hitdc_6"
+								data-placeholder="Hit / DC"
+							></div>
+							<!-- Damage -->
+							<p id="atk_dmg" class="fs-small">Damage:</p>
+							<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="atk_dmg_6"
+								data-placeholder="DMG"
+							></div>
+						</div>
+					</div>
+				</div>
+
+				<hr />
+
+				<!-- Masteries -->
+				<div id="masteries_container" class="">
+					<p class="header">Weapon Masteries:</p>
+					<!-- Mastery 1-->
+					<div class="border-all">
+						<!-- Mastery Name -->
+						<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="mastery_name_1"
+							data-placeholder="Mastery Name:"
+						></div>
+						<!-- Mastery Description -->
 						<div
 							class="editable fs-small edit-desc"
 							contenteditable="true"
-							data-key="atk_dmg_1"
-							data-placeholder="DMG"
+							data-key="mastery_desc_1"
+							data-placeholder="Mastery Description…"
+						></div>
+					</div>
+					<!-- Mastery 2-->
+					<div class="border-all">
+						<!-- Mastery Name -->
+						<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="mastery_name_2"
+							data-placeholder="Mastery Name:"
+						></div>
+						<!-- Mastery Description -->
+						<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="mastery_desc_2"
+							data-placeholder="Mastery Description…"
 						></div>
 					</div>
 				</div>
-			</div>
 
-			<hr />
+				<hr />
 
-			<!-- Masteries -->
-			<div id="masteries_container" class="">
-				<p class="header">Weapon Masteries:</p>
-				<!-- Mastery -->
-				<div class="border-all">
-					<!-- Mastery Name -->
-					<div
-						class="editable fs-small edit-label"
-						contenteditable="true"
-						data-key="mastery_name_1"
-						data-placeholder="Mastery Name:"
-					></div>
-					<!-- Mastery Description -->
-					<div
-						class="editable fs-small edit-desc"
-						contenteditable="true"
-						data-key="mastery_desc_1"
-						data-placeholder="Mastery Description…"
-					></div>
-				</div>
-				<!-- Mastery -->
-				<div class="border-all">
-					<!-- Mastery Name -->
-					<div
-						class="editable fs-small edit-label"
-						contenteditable="true"
-						data-key="mastery_name_2"
-						data-placeholder="Mastery Name:"
-					></div>
-					<!-- Mastery Description -->
-					<div
-						class="editable fs-small edit-desc"
-						contenteditable="true"
-						data-key="mastery_desc_2"
-						data-placeholder="Mastery Description…"
-					></div>
-				</div>
-			</div>
+				<!-- Effects -->
+				<p class="header">Effects:</p>
+				<div id="effects_container" class="border-all inline w-100">
 
-			<hr />
-
-			<!-- Effects -->
-			 <p class="header">Effects:</p>
-			<div id="effects_container" class="border-all inline w-100">
-
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="effect_name"
-				data-placeholder="Effect Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="effect_mod"
-				data-placeholder="Mod"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="effect_affects"
-				data-placeholder="Affects..."
-				></div>
-			</div>
-				
-			<hr />
-
-			<!-- Actions -->
-			<p class="header">Actions:</p>
-			<div id="actions_container" class="border-all w-100">
-
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="action_name"
-				data-placeholder="Action Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="action_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
-
-			<hr />
-
-			<!-- Bonus Actions -->
-			<p class="header">Bonus Actions:</p>
-			<div id="ba_container" class="border-all w-100">
-
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="ba_name"
-				data-placeholder="Bonus Action Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="ba_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
-
-			<hr />
-
-			<!-- Reactions -->
-			<p class="header">Reactions:</p>
-			<div id="reaction_container" class="border-all w-100">
-
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="reaction_name"
-				data-placeholder="Reaction Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="reaction_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
-
-			<hr />
-
-			<!-- Free Actions -->
-			<p class="header">Free Actions:</p>
-			<div id="free_container" class="border-all w-100">
-
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="free_name"
-				data-placeholder="Free Action Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="free_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
-		</div>
-
-		<!-- Skills / Tools Panel -->
-		<!-- Skills -->
-		 <div id="skills_container" class="bottom-border">
-
-			 <p class="fs-large border-all tab fit-content">Skills / Tools</p>
-			 <p class="header">Skills:</p>
-			 <div class="border-all">
-			 <form id="skill_acr">
-				 <label>
-					 <input type="radio" />
-					 <p id="skill_name">Acrobatics</p>
-					 <p id="skill_mod">Dex</p>
-					 <div
-					 class="editable green-number"
-					 contenteditable="true"
-					 data-key="acr_bonus"
-					 data-placeholder="+2"
-					 ></div>
-					</label>
-				</form>
-				<form id="skill_ah">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Animal Handling</p>
-						<p id="skill_mod">Wis</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="ah_bonus"
-						data-placeholder="+3"
-						></div>
-					</label>
-				</form>
-				<form id="skill_arc">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Arcana</p>
-						<p id="skill_mod">Int</p>
-						<div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="arc_bonus"
-						data-placeholder="-1"
-						></div>
-					</label>
-				</form>
-				<form id="skill_ath">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Athletics</p>
-						<p id="skill_mod">Str</p>
-						<div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="ath_bonus"
-						data-placeholder="-1"
-						></div>
-					</label>
-				</form>
-				<form id="skill_dec">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Deception</p>
-						<p id="skill_mod">Cha</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="dec_bonus"
-						data-placeholder="+4"
-						></div>
-					</label>
-				</form>
-				<form id="skill_his">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">History</p>
-						<p id="skill_mod">Int</p>
-						<div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="his_bonus"
-						data-placeholder="-1"
-						></div>
-					</label>
-				</form>
-				<form id="skill_ins">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Insight</p>
-						<p id="skill_mod">Wis</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="ins_bonus"
-						data-placeholder="+3"
-						></div>
-					</label>
-				</form>
-				<form id="skill_int">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Intimidation</p>
-						<p id="skill_mod">Cha</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="int_bonus"
-						data-placeholder="+4"
-						></div>
-					</label>
-				</form>
-				<form id="skill_inv">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Investigation</p>
-						<p id="skill_mod">Int</p>
-						<div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="inv_bonus"
-						data-placeholder="-1"
-						></div>
-					</label>
-				</form>
-				<form id="skill_med">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Medicine</p>
-						<p id="skill_mod">Wis</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="med_bonus"
-						data-placeholder="+3"
-						></div>
-					</label>
-				</form>
-				<form id="skill_nat">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Nature</p>
-						<p id="skill_mod">Int</p>
-						<div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="nat_bonus"
-						data-placeholder="-1"
-						></div>
-					</label>
-				</form>
-				<form id="skill_perc">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Perception</p>
-						<p id="skill_mod">Wis</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="perc_bonus"
-						data-placeholder="+3"
-						></div>
-					</label>
-				</form>
-				<form id="skill_perf">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Performance</p>
-						<p id="skill_mod">Cha</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="perf_bonus"
-						data-placeholder="+4"
-						></div>
-					</label>
-				</form>
-				<form id="skill_pers">
-					<label>
-						<input type="radio" class="expertise" />
-						<p id="skill_name">Persuasion</p>
-						<p id="skill_mod">Cha</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="pers_bonus"
-						data-placeholder="+4"
-						></div>
-					</label>
-				</form>
-				<form id="skill_rel">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Religion</p>
-						<p id="skill_mod">Int</p>
-						<div
-						class="editable red-number"
-						contenteditable="true"
-						data-key="rel_bonus"
-						data-placeholder="-1"
-						></div>
-					</label>
-				</form>
-				<form id="skill_sle">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Sleight of Hand</p>
-						<p id="skill_mod">Dex</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="sle_bonus"
-						data-placeholder="+2"
-						></div>
-					</label>
-				</form>
-				<form id="skill_ste">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Stealth</p>
-						<p id="skill_mod">Dex</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="ste_bonus"
-						data-placeholder="+2"
-						></div>
-					</label>
-				</form>
-				<form id="skill_sur">
-					<label>
-						<input type="radio" />
-						<p id="skill_name">Survival</p>
-						<p id="skill_mod">Wis</p>
-						<div
-						class="editable green-number"
-						contenteditable="true"
-						data-key="sur_bonus"
-						data-placeholder="+3"
-						></div>
-					</label>
-				</form>
-				</div>
-				
-				<hr>
-
-				<!-- Tool Proficiencies / Misc -->
-				<p class="header">Tools / Misc:</p>
-				 <div id="tool_misc_container" class="border-all w-100">
-
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="tool_misc_name"
-				data-placeholder="Proficiency Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="tool_misc_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
-				
-			</div>
-
-		
-		<!-- Spells Panel -->
-		<div id="spells_container" class="bottom-border">
-
-			<p id="spell_name">Spell Name</p>
-			<p id="spell_desc">Spell Desc</p>
-		</div>
-
-		<!-- Inventory Panel -->
-		<div id="inventory_container" class="bottom-border">
-		
-			<p class="fs-large border-all tab fit-content">Inventory</p>
-		<!-- Money -->
-		<p class="header">Money:</p>
-		<div class="border-all">
-		<div id="money_container_1" class="w-100 inline">
-			<p id="plat">Platinum: <div
-				class="editable edit-label"
-				contenteditable="true"
-				data-key="plat"
-				data-placeholder="0"
-				></div></p>
-			<p id="gold">Gold: <div
-				class="editable edit-label"
-				contenteditable="true"
-				data-key="gold"
-				data-placeholder="0"
-				></div></p>
-			<p id="electrum">Electrum: <div
-				class="editable edit-label"
-				contenteditable="true"
-				data-key="electrum"
-				data-placeholder="0"
-				></div></p>
-		</div>
-		<div id="money_container_2" class="w-100 inline">
-			<p id="silver">Silver: <div
-				class="editable edit-label"
-				contenteditable="true"
-				data-key="silver"
-				data-placeholder="0"
-				></div></p>
-			<p id="copper">Copper: <div
-				class="editable edit-label"
-				contenteditable="true"
-				data-key="copper"
-				data-placeholder="0"
-				></div></p>
-		</div>
-		</div>
-
-		<hr>
-
-		<!-- Equipment -->
-		<p class="header">Equipment:</p>
-		<div class="border-all">
-			<div
-			class="editable fs-small edit-label"
-			contenteditable="true"
-			data-key="equip_name"
-			data-placeholder="Equipment Name:"
-			></div>
-			<div id="equipment_header_container" class="inline">
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="equip_desc"
-				data-placeholder="Description..."
-				></div>
-				<div class="inline">
-					<p class="fs-small">Qty:</p>
 					<div
 					class="editable fs-small edit-label"
 					contenteditable="true"
-					data-key="equip_qty"
-					data-placeholder="0"
+					data-key="effect_name"
+					data-placeholder="Effect Name:"
 					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="effect_mod"
+					data-placeholder="Mod"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="effect_affects"
+					data-placeholder="Affects..."
+					></div>
+				</div>
+					
+				<hr />
+
+				<!-- Actions -->
+				<p class="header">Actions:</p>
+				<div id="actions_container" class="border-all w-100">
+
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="action_name"
+					data-placeholder="Action Name:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="action_desc"
+					data-placeholder="Description..."
+					></div>
+				</div>
+
+				<hr />
+
+				<!-- Bonus Actions -->
+				<p class="header">Bonus Actions:</p>
+				<div id="ba_container" class="border-all w-100">
+
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="ba_name"
+					data-placeholder="Bonus Action Name:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="ba_desc"
+					data-placeholder="Description..."
+					></div>
+				</div>
+
+				<hr />
+
+				<!-- Reactions -->
+				<p class="header">Reactions:</p>
+				<div id="reaction_container" class="border-all w-100">
+
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="reaction_name"
+					data-placeholder="Reaction Name:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="reaction_desc"
+					data-placeholder="Description..."
+					></div>
+				</div>
+
+				<hr />
+
+				<!-- Free Actions -->
+				<p class="header">Free Actions:</p>
+				<div id="free_container" class="border-all w-100">
+
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="free_name"
+					data-placeholder="Free Action Name:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="free_desc"
+					data-placeholder="Description..."
+					></div>
+				</div>
+			</div>
+			</div>
+  		</div>
+
+		<!-- Skills / Tools Panel -->
+		<!-- Skills -->
+		<div class="justify-between">
+			<p class="fs-large border-all tab fit-content">Skills / Tools</p>
+			<button class="collapser" data-collapse-target="sec-5"
+			aria-expanded="false" aria-controls="sec-5"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+  		</div>
+  		<div id="sec-5" class="collapse" data-open="false" aria-hidden="true" inert>
+			<div class="content">
+		 		<div id="skills_container" class="bottom-border">
+
+				<p class="header">Skills:</p>
+				<div class="border-all">
+					<form id="skill_acr">
+						<div class="d-flex">
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Acrobatics</p>
+								<p id="skill_mod">Dex</p>
+							</label>
+							<div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="acr_bonus"
+							data-placeholder="+2"
+							></div>
+						</div>
+					</form>
+					<form id="skill_ah">
+						<div class="d-flex">
+							<label>
+								<input type="radio" checked/>
+								<p id="skill_name">Animal Handling</p>
+								<p id="skill_mod">Wis</p>
+							</label>
+							<div
+							class="editable green-number"
+							contenteditable="true"
+							data-key="ah_bonus"
+							data-placeholder="+5"
+							></div>
+						</div>
+					</form>
+					<form id="skill_arc">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Arcana</p>
+								<p id="skill_mod">Int</p>
+							</label>
+								<div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="arc_bonus"
+								data-placeholder="-1"
+								></div>
+							</div>
+					</form>
+					<form id="skill_ath">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Athletics</p>
+								<p id="skill_mod">Str</p>
+							</label>
+								<div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="ath_bonus"
+								data-placeholder="-1"
+								></div>
+							</div>
+					</form>
+					<form id="skill_dec">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Deception</p>
+								<p id="skill_mod">Cha</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="dec_bonus"
+								data-placeholder="+4"
+								></div>
+							</div>
+					</form>
+					<form id="skill_his">
+						<div class="d-flex">
+							
+							<label>
+								<input type="radio" />
+								<p id="skill_name">History</p>
+								<p id="skill_mod">Int</p>
+							</label>
+								<div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="his_bonus"
+								data-placeholder="-1"
+								></div>
+							</div>
+					</form>
+					<form id="skill_ins">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Insight</p>
+								<p id="skill_mod">Wis</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="ins_bonus"
+								data-placeholder="+3"
+								></div>
+							</div>
+					</form>
+					<form id="skill_int">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" class="expertise" checked />
+								<p id="skill_name">Intimidation</p>
+								<p id="skill_mod">Cha</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="int_bonus"
+								data-placeholder="+8"
+								></div>
+							</div>
+					</form>
+					<form id="skill_inv">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Investigation</p>
+								<p id="skill_mod">Int</p>
+							</label>
+								<div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="inv_bonus"
+								data-placeholder="-1"
+								></div>
+							</div>
+					</form>
+					<form id="skill_med">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Medicine</p>
+								<p id="skill_mod">Wis</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="med_bonus"
+								data-placeholder="+3"
+								></div>
+							</div>
+					</form>
+					<form id="skill_nat">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Nature</p>
+								<p id="skill_mod">Int</p>
+							</label>
+								<div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="nat_bonus"
+								data-placeholder="-1"
+								></div>
+							</div>
+					</form>
+					<form id="skill_perc">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Perception</p>
+								<p id="skill_mod">Wis</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="perc_bonus"
+								data-placeholder="+3"
+								></div>
+							</div>
+					</form>
+					<form id="skill_perf">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" checked/>
+								<p id="skill_name">Performance</p>
+								<p id="skill_mod">Cha</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="perf_bonus"
+								data-placeholder="+6"
+								></div>
+							</div>
+					</form>
+					<form id="skill_pers">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" checked/>
+								<p id="skill_name">Persuasion</p>
+								<p id="skill_mod">Cha</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="pers_bonus"
+								data-placeholder="+6"
+								></div>
+							</div>
+					</form>
+					<form id="skill_rel">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Religion</p>
+								<p id="skill_mod">Int</p>
+							</label>
+								<div
+								class="editable red-number"
+								contenteditable="true"
+								data-key="rel_bonus"
+								data-placeholder="-1"
+								></div>
+							</div>
+					</form>
+					<form id="skill_sle">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" />
+								<p id="skill_name">Sleight of Hand</p>
+								<p id="skill_mod">Dex</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="sle_bonus"
+								data-placeholder="+2"
+								></div>
+							</div>
+					</form>
+					<form id="skill_ste">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" checked/>
+								<p id="skill_name">Stealth</p>
+								<p id="skill_mod">Dex</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="ste_bonus"
+								data-placeholder="+4"
+								></div>
+							</div>
+					</form>
+					<form id="skill_sur">
+						<div class="d-flex">
+
+							<label>
+								<input type="radio" checked/>
+								<p id="skill_name">Survival</p>
+								<p id="skill_mod">Wis</p>
+							</label>
+								<div
+								class="editable green-number"
+								contenteditable="true"
+								data-key="sur_bonus"
+								data-placeholder="+5"
+								></div>
+							</div>
+					</form>
+					</div>
+				
+					<hr>
+
+					<!-- Tool Proficiencies / Misc -->
+					<p class="header">Tools / Misc:</p>
+					<div id="tool_misc_container" class="border-all w-100">
+
+						<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="tool_misc_name"
+						data-placeholder="Proficiency Name:"
+						></div>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="tool_misc_desc"
+						data-placeholder="Description..."
+						></div>
+					</div>
+				
+				</div>
+			</div>
+  		</div>
+
+		<!-- Spells Panel -->
+		<div class="justify-between">
+			<p class="fs-large border-all tab fit-content">Spells</p>
+			<button class="collapser" data-collapse-target="sec-6"
+				aria-expanded="false" aria-controls="sec-6"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+  		</div>
+		<div id="sec-6" class="collapse" data-open="false" aria-hidden="true" inert>
+			<div class="content">
+
+				<p class="header">Spell Slots:</p>
+				<div class="inline border-all fit-content">
+					<p>1st:</p>
+					<input type="radio">
+					<input type="radio">
+					<input type="radio">
+				</div>
+
+				<hr>
+				
+				<div class="justify-between">
+					<p class="header">Spells:</p>
+					<button id="add-spell" class="add-button header">+</button>
+				</div>
+
+				<div id="spells_container" class="bottom-border">
+					<section class="spell-group" data-level="0"><h4>Cantrips</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="1"><h4>1st Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="2"><h4>2nd Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="3"><h4>3rd Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="4"><h4>4th Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="5"><h4>5th Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="6"><h4>6th Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="7"><h4>7th Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="8"><h4>8th Level</h4><div class="group-body"></div></section>
+					<section class="spell-group" data-level="9"><h4>9th Level</h4><div class="group-body"></div></section>
+
+					<!-- Spell 1 -->
+					<div class="w-100 spell" data-index="1">
+						<div id="spell_header_container" class="border-all">
+							<div
+							class="editable edit-label"
+							contenteditable="true"
+							data-key="spell_name_1"
+							data-placeholder="Spell Name:"
+							></div>
+							<div  id="spell_level_container">
+								<div class="inline">
+									<p class="fs-small">Lvl :</p>
+									<div
+									class="editable fs-small edit-label"
+									contenteditable="true"
+									data-key="spell_level_1"
+									data-placeholder="0"
+									></div>
+								</div>
+								<div
+								class="editable fs-small edit-desc"
+								contenteditable="true"
+								data-key="spell_school_1"
+								data-placeholder="Description..."
+								></div>
+							</div>
+							<button class="collapser" data-collapse-target="spell-sec-1" aria-expanded="false" aria-controls="spell-sec-1"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+						</div>
+							<div id="spell-sec-1" class="collapse" data-open="false" aria-hidden="true" inert>
+								<div class="content">
+									<div class="inline">
+										<p class="fs-small">Prepared: </p>
+										<input type="checkbox" class="prepared">
+									</div>
+									
+									<p class="fs-small">Casting Time:</p>
+									<div
+									class="editable fs-small edit-desc text-right"
+									contenteditable="true"
+									data-key="spell_cast_time_1"
+									data-placeholder="Description..."
+									></div>
+						
+									<div class="inline">
+										<p class="fs-small">Range:</p>
+										<div
+										class="editable fs-small edit-desc"
+										contenteditable="true"
+										data-key="spell_range_1"
+										data-placeholder="Description..."
+										></div>
+									</div>
+									<div class="inline">
+										<p class="fs-small">Components:</p>
+										<div
+										class="editable fs-small edit-desc"
+										contenteditable="true"
+										data-key="spell_components_1"
+										data-placeholder="Description..."
+										></div>
+									</div>
+									<div class="inline">
+										<p class="fs-small">Duration:</p>
+										<div
+										class="editable fs-small edit-desc"
+										contenteditable="true"
+										data-key="spell_duration_1"
+										data-placeholder="Description..."
+										></div>
+									</div>
+									<hr>
+									<div class="inline">
+										<p class="fs-small">Description:</p>
+										<div
+										class="editable fs-small edit-desc"
+										contenteditable="true"
+										data-key="spell_desc_1"
+										data-placeholder="Description..."
+										></div>
+									</div>
+									<div class="inline">
+										<p class="fs-small">Upcast:</p>
+										<div
+										class="editable fs-small edit-desc"
+										contenteditable="true"
+										data-key="spell_upcast_1"
+										data-placeholder="Description..."
+										></div>
+									</div>
+								</div>
+							</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<hr>
+		<!-- Inventory Panel -->
+		<div class="justify-between">
+			<p class="fs-large border-all tab fit-content">Inventory</p>
+			<button class="collapser" data-collapse-target="sec-7"
+				aria-expanded="false" aria-controls="sec-7"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+		</div>
+		<div id="sec-7" class="collapse" data-open="false" aria-hidden="true" inert>
+					<div class="content">
+				<div id="inventory_container" class="bottom-border">
+				
+				<!-- Money -->
+				<p class="header">Money:</p>
+				<div class="border-all">
+				<div id="money_container_1" class="w-100 inline">
+					<p id="plat">Platinum: <div
+						class="editable edit-label"
+						contenteditable="true"
+						data-key="plat"
+						data-placeholder="0"
+						></div></p>
+					<p id="gold">Gold: <div
+						class="editable edit-label"
+						contenteditable="true"
+						data-key="gold"
+						data-placeholder="0"
+						></div></p>
+					<p id="electrum">Electrum: <div
+						class="editable edit-label"
+						contenteditable="true"
+						data-key="electrum"
+						data-placeholder="0"
+						></div></p>
+				</div>
+					<div id="money_container_2" class="w-100 inline">
+						<p id="silver">Silver: <div
+							class="editable edit-label"
+							contenteditable="true"
+							data-key="silver"
+							data-placeholder="0"
+							></div></p>
+						<p id="copper">Copper: <div
+							class="editable edit-label"
+							contenteditable="true"
+							data-key="copper"
+							data-placeholder="0"
+							></div></p>
+					</div>
+				</div>
 
-		<!-- Attunement -->
-		 <p class="header">Attunements:</p>
-		 <div class="border-all">
+				<hr>
 
-			 <div
-			 class="editable fs-small edit-label"
-			 contenteditable="true"
-			 data-key="attune_name_1"
-			 data-placeholder="Attuned Item:"
-			 ></div>
-			 <div
-			 class="editable fs-small edit-desc"
-			 contenteditable="true"
-			 data-key="attune_desc_1"
-			 data-placeholder="Description..."
-			 ></div>
-			</div>
-			<div class="border-all">
+				<!-- Equipment -->
+				<p class="header">Equipment:</p>
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="equip_name"
+					data-placeholder="Equipment Name:"
+					></div>
+					<div id="equipment_header_container" class="inline">
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="equip_desc"
+						data-placeholder="Description..."
+						></div>
+						<div class="inline">
+							<p class="fs-small">Qty:</p>
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="equip_qty"
+							data-placeholder="0"
+							></div>
+						</div>
+					</div>
+				</div>
 
-			 <div
-			 class="editable fs-small edit-label"
-			 contenteditable="true"
-			 data-key="attune_name_1"
-			 data-placeholder="Attuned Item:"
-			 ></div>
-			 <div
-			 class="editable fs-small edit-desc"
-			 contenteditable="true"
-			 data-key="attune_desc_1"
-			 data-placeholder="Description..."
-			 ></div>
-			</div>
-			<div class="border-all">
+				<hr>
 
-			 <div
-			 class="editable fs-small edit-label"
-			 contenteditable="true"
-			 data-key="attune_name_1"
-			 data-placeholder="Attuned Item:"
-			 ></div>
-			 <div
-			 class="editable fs-small edit-desc"
-			 contenteditable="true"
-			 data-key="attune_desc_1"
-			 data-placeholder="Description..."
-			 ></div>
-			</div>
-			 
-		<hr>
+				<!-- Attunement -->
+				<p class="header">Attunements:</p>
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="attune_name_1"
+					data-placeholder="Attuned Item:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="attune_desc_1"
+					data-placeholder="Description..."
+					></div>
+				</div>
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="attune_name_1"
+					data-placeholder="Attuned Item:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="attune_desc_1"
+					data-placeholder="Description..."
+					></div>
+				</div>
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="attune_name_1"
+					data-placeholder="Attuned Item:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="attune_desc_1"
+					data-placeholder="Description..."
+					></div>
+				</div>
+					
+				<hr>
 
-		<!-- Other Possesions -->
-		 <p class="header">Other Possesions:</p>
-		<div class="border-all">
+				<!-- Other Possesions -->
+				<p class="header">Other Possesions:</p>
+				<div class="border-all">
 
-			 <div
-			 class="editable fs-small edit-label"
-			 contenteditable="true"
-			 data-key="possesion_name"
-			 data-placeholder="Item Name:"
-			 ></div>
-			 <div
-			 class="editable fs-small edit-desc"
-			 contenteditable="true"
-			 data-key="possesion_desc"
-			 data-placeholder="Description..."
-			 ></div>
-			</div>
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="possesion_name"
+					data-placeholder="Item Name:"
+					></div>
+					<div
+					class="editable fs-small edit-desc"
+					contenteditable="true"
+					data-key="possesion_desc"
+					data-placeholder="Description..."
+					></div>
+				</div>
 
+				</div>
+					</div>
 		</div>
 
-
 		<!-- Features / Traits Panel -->
-		<p class="fs-large border-all tab fit-content">Features / Traits</p>
-		<div id="features_container" class="bottom-border">
-		<!-- Class Features -->
-			<p class="header">Class Features:</p>
-			<div class="border-all w-100">
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="class_feat_name"
-				data-placeholder="Class Feature Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="class_feat_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
-			<hr>
-			<!-- Species Traits -->
-			<p class="header">Species Traits:</p>
-			<div class="border-all w-100">
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="species_trait_name"
-				data-placeholder="Species Trait Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="species_trait_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
+		<div class="justify-between">
+			<p class="fs-large border-all tab fit-content">Features / Traits</p>
+			<button class="collapser" data-collapse-target="sec-8"
+				aria-expanded="false" aria-controls="sec-8"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+		</div>
+		<div id="sec-8" class="collapse" data-open="true" aria-hidden="true" inert>
+					<div class="content">
+				<div id="features_container" class="bottom-border">
+				<!-- Class Features -->
+					<div id="class_features_container">
+						<p class="header">Class Features:</p>
+						<!-- Class Feature 1 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_1"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_1"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 2 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_2"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_2"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 3 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_3"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_3"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 4 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_4"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_4"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 5 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_5"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_5"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 6 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_6"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_6"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 7 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_7"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_7"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Class Feature 8 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="class_feat_name_8"
+							data-placeholder="Class Feature Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="class_feat_desc_8"
+							data-placeholder="Description..."
+							></div>
+						</div>
+					</div>
 
-			<hr>
+					<hr>
 
-			<!-- Feats -->
-			<p class="header">Feats:</p>
-			<div class="border-all w-100">
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="feat_name"
-				data-placeholder="Feat Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="feat_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
+					<!-- Species Traits -->
+					<p class="header">Species Traits:</p>
+					<div id="species_traits_container">
+						<!-- Species Trait 1 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="species_trait_name_1"
+							data-placeholder="Species Trait Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="species_trait_desc_1"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Species Trait 2 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="species_trait_name_2"
+							data-placeholder="Species Trait Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="species_trait_desc_2"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Species Trait 3 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="species_trait_name_3"
+							data-placeholder="Species Trait Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="species_trait_desc_3"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Species Trait 4 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="species_trait_name_4"
+							data-placeholder="Species Trait Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="species_trait_desc_4"
+							data-placeholder="Description..."
+							></div>
+						</div>
+						<!-- Species Trait 5 -->
+						<div class="border-all w-100">
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="species_trait_name_5"
+							data-placeholder="Species Trait Name:"
+							></div>
+							<div
+							class="editable fs-small edit-desc"
+							contenteditable="true"
+							data-key="species_trait_desc_5"
+							data-placeholder="Description..."
+							></div>
+						</div>
+					</div>
 
-			<hr>
+					<hr>
 
-			<!-- Other Features -->
-			<p class="header">Other Features:</p>
-			<div class="border-all w-100">
-				<div
-				class="editable fs-small edit-label"
-				contenteditable="true"
-				data-key="other_feature_name"
-				data-placeholder="Other Feature Name:"
-				></div>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="other_feature_desc"
-				data-placeholder="Description..."
-				></div>
-			</div>
+					<!-- Feats -->
+					<p class="header">Feats:</p>
+					<div class="border-all w-100">
+						<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="feat_name"
+						data-placeholder="Feat Name:"
+						></div>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="feat_desc"
+						data-placeholder="Description..."
+						></div>
+					</div>
+
+					<hr>
+
+					<!-- Other Features -->
+					<p class="header">Other Features:</p>
+					<div class="border-all w-100">
+						<!-- Other Feature 1 -->
+						<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="other_feature_name_1"
+						data-placeholder="Other Feature Name:"
+						></div>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="other_feature_desc_1"
+						data-placeholder="Description..."
+						></div>
+					</div>
+				</div>
+					</div>
 		</div>
 
 		<!-- Notes Panel -->
-		<p class="fs-large border-all tab fit-content">Notes</p>
-		<div id="features_container" class="bottom-border">
-			<div class="border-all w-100">
-				<p class="fs-small">Organizations:</p>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="organizations"
-				data-placeholder="Description..."
-				></div>
-			</div>
-			<div class="border-all w-100">
-				<p class="fs-small">Allies:</p>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="allies"
-				data-placeholder="Description..."
-				></div>
-			</div>
-			<div class="border-all w-100">
-				<p class="fs-small">Enemies:</p>
-				<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="enemies"
-				data-placeholder="Description..."
-				></div>
-			</div>
+		<div class="justify-between">
+			<p class="fs-large border-all tab fit-content">Notes</p>
+			<button class="collapser" data-collapse-target="sec-9"
+				aria-expanded="false" aria-controls="sec-9"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+  		</div>
+		<div id="sec-9" class="collapse" data-open="false" aria-hidden="true" inert>
+					<div class="content">
+				<div id="features_container" class="bottom-border">
+					<div class="border-all w-100">
+						<p class="fs-small">Organizations:</p>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="organizations"
+						data-placeholder="Description..."
+						></div>
+					</div>
+					<div class="border-all w-100">
+						<p class="fs-small">Allies:</p>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="allies"
+						data-placeholder="Description..."
+						></div>
+					</div>
+					<div class="border-all w-100">
+						<p class="fs-small">Enemies:</p>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="enemies"
+						data-placeholder="Description..."
+						></div>
+					</div>
+				</div>
+					</div>
 		</div>
-
 
 		<!-- About Panel -->
-		<p class="fs-large border-all tab fit-content">About</p>
-		<div id="features_container" class="bottom-border">
-			<!-- Background -->
-			 <div class="border-all">
-			<p class="fs-small">Background:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="background"
-				data-placeholder="Description..."
-				></div>
-			</div>
-			<!-- Characteristics -->
-			 <div class="border-all">
-			<p id="alignment" class="fs-small">Allignment:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="alignment"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="gender" class="fs-small">Gender:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="gender"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="eye_color" class="fs-small">Eye Color:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="eye_color"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="size" class="fs-small">Size:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="size"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="height" class="fs-small">Height:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="height"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="faith" class="fs-small">Faith:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="faith"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="hair_color" class="fs-small">Hair Color:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="hair_color"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="skin_color" class="fs-small">Skin Color:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="skin_color"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="age" class="fs-small">Age:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="age"
-				data-placeholder="Description..."
-				></div></div>
-			<div class="border-all">
-			<p id="weight" class="fs-small">Weight</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="weight"
-				data-placeholder="Description..."
-				></div></div>
-
-			<!-- Appearance -->
-			<div class="border-all">
-			<p id="apprearance_desc" class="fs-small">Appearance:</p>
-			<div
-				class="editable fs-small edit-desc"
-				contenteditable="true"
-				data-key="apprearance_desc"
-				data-placeholder="Description..."
-				></div></div>
+		<div class="justify-between">
+			<p class="fs-large border-all tab fit-content">About</p>
+			<button class="collapser" data-collapse-target="sec-10"
+				aria-expanded="false" aria-controls="sec-10"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
 		</div>
+		<div id="sec-10" class="collapse" data-open="false" aria-hidden="true" inert>
+					<div class="content">
+				<div id="features_container" class="bottom-border">
+					<!-- Background -->
+					<div class="border-all">
+					<p class="fs-small">Background:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="background"
+						data-placeholder="Description..."
+						></div>
+					</div>
+					<!-- Characteristics -->
+					<div class="border-all">
+					<p id="alignment" class="fs-small">Allignment:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="alignment"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="gender" class="fs-small">Gender:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="gender"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="eye_color" class="fs-small">Eye Color:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="eye_color"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="size" class="fs-small">Size:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="size"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="height" class="fs-small">Height:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="height"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="faith" class="fs-small">Faith:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="faith"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="hair_color" class="fs-small">Hair Color:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="hair_color"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="skin_color" class="fs-small">Skin Color:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="skin_color"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="age" class="fs-small">Age:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="age"
+						data-placeholder="Description..."
+						></div></div>
+					<div class="border-all">
+					<p id="weight" class="fs-small">Weight</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="weight"
+						data-placeholder="Description..."
+						></div></div>
+
+					<!-- Appearance -->
+					<div class="border-all">
+					<p id="apprearance_desc" class="fs-small">Appearance:</p>
+					<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="apprearance_desc"
+						data-placeholder="Description..."
+						></div></div>
+				</div>
+					</div>
+		</div>
+
 	</body>
 </html>
+
+
+<!-- 
+
+<div class="justify-between">
+
+<button class="collapser" data-collapse-target="sec-10" aria-expanded="false" aria-controls="sec-10"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
+</div>
+<div id="sec-10" class="collapse" data-open="false" aria-hidden="true" inert>
+	<div class="content"> 
+		
+-->
