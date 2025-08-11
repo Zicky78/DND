@@ -283,6 +283,9 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 		sortGroup(lvl);
 	}
 
+	// expose grouping helpers for other modules/IIFEs
+	window.SPELLS = { placeInGroup, sortGroup, parseSpellLevel };
+
 	function wireCollapse(button, panel) {
 		if (!button || !panel) return;
 		// remove copied listeners
@@ -390,10 +393,6 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 		); // capture, because blur doesn't bubble
 	}
 
-	
-
-
-
 	// Make sure the count key is correct (e.g., on first run)
 	localStorage.setItem(
 		COUNT_KEY,
@@ -415,7 +414,7 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 	// Optional per-character namespace
 	const scope =
 		list.closest('[data-scope]')?.getAttribute('data-scope') || 'default';
-
+	const { placeInGroup, sortGroup, parseSpellLevel } = window.SPELLS || {};
 	const COUNT_KEY = `sheet:${scope}:spells_count`;
 	const sk = (k) => `sheet:${scope}:${k}`;
 
