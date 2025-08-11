@@ -5,7 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Character Sheet</title>
 		<link rel="stylesheet" href="../css/styles.css" />
-		<script defer src="../js/main.js"></script>
+		<meta name="sheet-json" content="../character_sheet/character_sheet_zach.json">
+	<script defer src="../js/main.js"></script>
+		
 	</head>
 	<body>
 		<!-- Character Main Panel -->
@@ -1072,13 +1074,26 @@
 						<div
 						class="editable fs-small edit-label"
 						contenteditable="true"
-						data-key="tool_misc_name"
+						data-key="tool_misc_name_1"
 						data-placeholder="Proficiency Name:"
 						></div>
 						<div
 						class="editable fs-small edit-desc"
 						contenteditable="true"
-						data-key="tool_misc_desc"
+						data-key="tool_misc_desc_1"
+						data-placeholder="Description..."
+						></div>
+						<hr>
+						<div
+						class="editable fs-small edit-label"
+						contenteditable="true"
+						data-key="tool_misc_name_2"
+						data-placeholder="Proficiency Name:"
+						></div>
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="tool_misc_desc_2"
 						data-placeholder="Description..."
 						></div>
 					</div>
@@ -1272,18 +1287,20 @@
 
 				<!-- Equipment -->
 				<p class="header">Equipment:</p>
+
+				<!-- Item 1 -->
 				<div class="border-all">
 					<div
 					class="editable fs-small edit-label"
 					contenteditable="true"
-					data-key="equip_name"
+					data-key="equip_name_1"
 					data-placeholder="Equipment Name:"
 					></div>
 					<div id="equipment_header_container" class="inline">
 						<div
 						class="editable fs-small edit-desc"
 						contenteditable="true"
-						data-key="equip_desc"
+						data-key="equip_desc_1"
 						data-placeholder="Description..."
 						></div>
 						<div class="inline">
@@ -1291,7 +1308,152 @@
 							<div
 							class="editable fs-small edit-label"
 							contenteditable="true"
-							data-key="equip_qty"
+							data-key="equip_qty_1"
+							data-placeholder="0"
+							></div>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<!-- Item 3 -->
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="equip_name_2"
+					data-placeholder="Equipment Name:"
+					></div>
+					<div id="equipment_header_container" class="inline">
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="equip_desc_2"
+						data-placeholder="Description..."
+						></div>
+						<div class="inline">
+							<p class="fs-small">Qty:</p>
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="equip_qty_2"
+							data-placeholder="0"
+							></div>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<!-- Item 3 -->
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="equip_name_3"
+					data-placeholder="Equipment Name:"
+					></div>
+					<div id="equipment_header_container" class="inline">
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="equip_desc_3"
+						data-placeholder="Description..."
+						></div>
+						<div class="inline">
+							<p class="fs-small">Qty:</p>
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="equip_qty_3"
+							data-placeholder="0"
+							></div>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<!-- Item 4 -->
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="equip_name_4"
+					data-placeholder="Equipment Name:"
+					></div>
+					<div id="equipment_header_container" class="inline">
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="equip_desc_4"
+						data-placeholder="Description..."
+						></div>
+						<div class="inline">
+							<p class="fs-small">Qty:</p>
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="equip_qty_4"
+							data-placeholder="0"
+							></div>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<!-- Item 5 -->
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="equip_name_5"
+					data-placeholder="Equipment Name:"
+					></div>
+					<div id="equipment_header_container" class="inline">
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="equip_desc_5"
+						data-placeholder="Description..."
+						></div>
+						<div class="inline">
+							<p class="fs-small">Qty:</p>
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="equip_qty_5"
+							data-placeholder="0"
+							></div>
+						</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<!-- Item 6 -->
+				<div class="border-all">
+					<div
+					class="editable fs-small edit-label"
+					contenteditable="true"
+					data-key="equip_name_6"
+					data-placeholder="Equipment Name:"
+					></div>
+					<div id="equipment_header_container" class="inline">
+						<div
+						class="editable fs-small edit-desc"
+						contenteditable="true"
+						data-key="equip_desc_6"
+						data-placeholder="Description..."
+						></div>
+						<div class="inline">
+							<p class="fs-small">Qty:</p>
+							<div
+							class="editable fs-small edit-label"
+							contenteditable="true"
+							data-key="equip_qty_6"
 							data-placeholder="0"
 							></div>
 						</div>
@@ -1375,7 +1537,7 @@
 			<button class="collapser" data-collapse-target="sec-8"
 				aria-expanded="false" aria-controls="sec-8"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
 		</div>
-		<div id="sec-8" class="collapse" data-open="true" aria-hidden="true" inert>
+		<div id="sec-8" class="collapse" data-open="false" aria-hidden="true" inert>
 					<div class="content">
 				<div id="features_container" class="bottom-border">
 				<!-- Class Features -->

@@ -607,6 +607,37 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 	// Expose to buttons (or call directly in onclick handlers)
 	window.SheetFS = { saveNative, openNative };
 
+	// Auto-load a default JSON if present (same-origin)
+	// Put this near the end of the IIFE, before it closes.
+	(async () => {
+		// Priority: ?sheet= URL param > meta[name=sheet-json] > data-default-json
+		const qs = new URLSearchParams(location.search).get('sheet');
+		const fromMeta = document.querySelector('meta[name="sheet-json"]')?.content;
+		const fromAttr =
+			document.getElementById('spells_container')?.dataset.defaultJson;
+		const url = qs || fromMeta || fromAttr;
+		if (!url) return;
+
+		try {
+			const res = await fetch(url, { cache: 'no-store' });
+			if (!res.ok) return; // no file -> just fall back to localStorage
+			let data;
+			const ct = res.headers.get('content-type') || '';
+			if (ct.includes('application/json')) {
+				data = await res.json();
+			} else {
+				// some hosts serve JSON as text/plain
+				data = JSON.parse(await res.text());
+			}
+			await restore(data); // rebuild cards + fill values
+			persistToLocalStorage(data); // so refresh works offline
+			console.info('Loaded sheet from', url);
+		} catch (err) {
+			console.warn('Default sheet load failed:', err);
+			// falls back to whatever localStorage had
+		}
+	})();
+
 	// async function saveNative() {
 	// 	const data = snapshot(); // reuse from above
 	// 	const handle = await window.showSaveFilePicker({
