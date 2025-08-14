@@ -130,11 +130,6 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 
 
 
-
-
-
-
-
 (function () {
 	const list = document.getElementById('spells_container');
 	const addBtn = document.getElementById('add-spell');
@@ -325,25 +320,6 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 
 	// After restoring prepared checkboxes...
 	list.querySelectorAll('.spell').forEach(placeInGroup);
-
-	// Attach once
-	// if (!list.dataset.sortListener) {
-	// 	list.dataset.sortListener = '1';
-	// 	list.addEventListener('input', (e) => {
-	// 		const t = e.target;
-	// 		if (!(t instanceof HTMLElement)) return;
-
-	// 		if (t.matches('[contenteditable][data-key^="spell_level_"]')) {
-	// 			const card = t.closest('.spell');
-	// 			if (card) placeInGroup(card); // move to new level + sort there
-	// 		}
-
-	// 		if (t.matches('[contenteditable][data-key^="spell_name_"]')) {
-	// 			const card = t.closest('.spell');
-	// 			if (card) sortGroup(parseSpellLevel(card)); // resort by name in current level
-	// 		}
-	// 	});
-	// }
 
 	const RESORT_DELAY = 4000;
 	const timers = new WeakMap();
@@ -636,31 +612,6 @@ document.querySelectorAll('.edit-desc[contenteditable]').forEach((el) => {
 			// falls back to whatever localStorage had
 		}
 	})();
-
-	// async function saveNative() {
-	// 	const data = snapshot(); // reuse from above
-	// 	const handle = await window.showSaveFilePicker({
-	// 		suggestedName: `sheet-${scope}.json`,
-	// 		types: [
-	// 			{ description: 'JSON', accept: { 'application/json': ['.json'] } },
-	// 		],
-	// 	});
-	// 	const w = await handle.createWritable();
-	// 	await w.write(JSON.stringify(data, null, 2));
-	// 	await w.close();
-	// }
-
-	// async function openNative() {
-	// 	const [handle] = await window.showOpenFilePicker({
-	// 		types: [
-	// 			{ description: 'JSON', accept: { 'application/json': ['.json'] } },
-	// 		],
-	// 	});
-	// 	const file = await handle.getFile();
-	// 	const data = JSON.parse(await file.text());
-	// 	await restore(data);
-	// 	persistToLocalStorage(data);
-	// }
 })();
 
 document

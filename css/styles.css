@@ -45,7 +45,6 @@ body {
 .spell-group h4 { font-size: 1.1rem; margin-bottom: 6px; }
 .group-body > .spell { margin-bottom: 10px; }
 
-
 .center {
 	display: flex;
 	justify-content: center;
@@ -129,7 +128,6 @@ body {
 	color: #fff;
 	padding: 3px 5px;
 }
-
 
 button.collapser {
 	background: none;
@@ -226,7 +224,6 @@ hr {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
-	/* justify-content: space-evenly; */
 }
 
 #inspiration {
@@ -269,10 +266,6 @@ form {
 	flex-direction: column;
 }
 
-/* #spell_header_container:has(+ #spell-sec-1 .prepared:checked) {
-	
-} */
-
 .spell > .border-all:has(+ .collapse .prepared:checked) {
   	background: #439b65;
 	transition: background-color .2s ease;
@@ -286,8 +279,6 @@ form {
 	display: flex;
 	justify-content: space-between;
 }
-
-
 
  .collapse {
     display: grid;
@@ -309,15 +300,3 @@ form {
   @media (prefers-reduced-motion: reduce) {
     .collapse { transition: none; }
   }
-
-
-  /*
-  
-<div class="justify-between">
-
-<button class="collapser" data-collapse-target="sec-10" aria-expanded="false" aria-controls="sec-10"><img class="panel-button" src="../assets/hamburger.svg" alt="Open panel"></button>
-</div>
-<div id="spell-sec-1" class="collapse" data-open="false" aria-hidden="true" inert>
-	<div class="content"> 
- 
-  */
